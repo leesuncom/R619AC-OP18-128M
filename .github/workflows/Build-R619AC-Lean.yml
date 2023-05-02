@@ -78,7 +78,7 @@ jobs:
         cd openwrt/package
         mkdir openwrt-packages
         cd openwrt-packages
-        git clone https://github.com/tty228/luci-app-serverchan
+        # git clone https://github.com/tty228/luci-app-serverchan
         git clone https://github.com/fw876/helloworld
         git clone -b lede https://github.com/pymumu/luci-app-smartdns
         svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
@@ -86,11 +86,11 @@ jobs:
         #svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
         #svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
         #svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-        git clone https://github.com/xiaorouji/openwrt-passwall
+        # git clone https://github.com/xiaorouji/openwrt-passwall
         git clone https://github.com/sbwml/luci-app-alist
-        git clone -b luci https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
-        svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
-        svn export https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome
+        # git clone -b luci https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
+        # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
+        # svn export https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome
         #svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2
 
     - name: FilePatch
@@ -184,32 +184,32 @@ jobs:
         # LuCI插件选择:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-app-alist=y
-        CONFIG_PACKAGE_luci-app-passwall=y
-        CONFIG_PACKAGE_luci-app-diskman=y
+        # CONFIG_PACKAGE_luci-app-passwall is not set
+        #CONFIG_PACKAGE_luci-app-diskman is not set
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-ddns=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
-        CONFIG_PACKAGE_luci-app-speedlimit=y
-        CONFIG_PACKAGE_luci-app-nlbwmon=y
+        # CONFIG_PACKAGE_luci-app-speedlimit is not set
+        # CONFIG_PACKAGE_luci-app-nlbwmon is not set
         CONFIG_PACKAGE_luci-app-firewall=y
         CONFIG_PACKAGE_luci-app-ssr-plus=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
-        CONFIG_PACKAGE_luci-app-serverchan=y
-        CONFIG_PACKAGE_luci-app-pptp-server=y
+        # CONFIG_PACKAGE_luci-app-serverchan is not set
+        # CONFIG_PACKAGE_luci-app-pptp-server is not set
         CONFIG_PACKAGE_luci-app-smartdns=y
-        CONFIG_PACKAGE_luci-app-samba4=y
+        # CONFIG_PACKAGE_luci-app-samba4 is not set
         CONFIG_PACKAGE_luci-app-ttyd=y
-        CONFIG_PACKAGE_luci-app-webadmin=y
+        # CONFIG_PACKAGE_luci-app-webadmin is not set
         CONFIG_PACKAGE_luci-app-wol=y
-        CONFIG_PACKAGE_luci-app-wrtbwmon=y
+        # CONFIG_PACKAGE_luci-app-wrtbwmon is not set
         CONFIG_PACKAGE_luci-app-ramfree=y
-        CONFIG_PACKAGE_luci-app-usb-printer=y
+        # CONFIG_PACKAGE_luci-app-usb-printer is not set
         CONFIG_PACKAGE_luci-app-upnp=y
-        CONFIG_PACKAGE_luci-app-vsftpd=y
+        # CONFIG_PACKAGE_luci-app-vsftpd is not set
         CONFIG_PACKAGE_luci-app-vlmcsd=y
-        CONFIG_PACKAGE_luci-app-zerotier=y
-        CONFIG_PACKAGE_luci-app-adguardhome=y
-        CONFIG_PACKAGE_luci-app-sqm=y
+        # CONFIG_PACKAGE_luci-app-zerotier is not set
+        # CONFIG_PACKAGE_luci-app-adguardhome is not set
+        # CONFIG_PACKAGE_luci-app-sqm is not set
         EOF
 
         # LuCI主题:
@@ -221,8 +221,8 @@ jobs:
         cat >> .config <<EOF
         CONFIG_DEFAULT_coremark=y
         CONFIG_PACKAGE_e2fsprogs=y
-        CONFIG_PACKAGE_samba4-libs=y
-        CONFIG_PACKAGE_samba4-server=y
+        # CONFIG_PACKAGE_samba4-libs is not set
+        # CONFIG_PACKAGE_samba4-server is not set
         # CONFIG_PACKAGE_odhcpd is not set
         # CONFIG_luci-app-samba is net set
         # CONFIG_PACKAGE_luci-app-unblockmusic is net set
