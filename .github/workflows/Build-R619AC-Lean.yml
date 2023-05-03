@@ -87,9 +87,9 @@ jobs:
         #svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
         #svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
         #svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-        # git clone https://github.com/xiaorouji/openwrt-passwall
-        git clone https://github.com/sbwml/luci-app-alist
-        # git clone -b luci https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
+        git clone https://github.com/xiaorouji/openwrt-passwall
+        # git clone https://github.com/sbwml/luci-app-alist
+        git clone -b luci https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
         # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
         # svn export https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome
         #svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2
@@ -184,10 +184,13 @@ jobs:
 
         # LuCI插件选择:
         cat >> .config <<EOF
-        CONFIG_PACKAGE_luci-app-alist=y
+        # CONFIG_PACKAGE_luci-app-ipsec-server is not set
+        # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
+        # CONFIG_PACKAGE_luci-app-alist is not set
         # CONFIG_PACKAGE_luci-app-passwall is not set
-        #CONFIG_PACKAGE_luci-app-diskman is not set
+        # CONFIG_PACKAGE_luci-app-diskman is not set
         CONFIG_PACKAGE_luci-app-autoreboot=y
+        CONFIG_PACKAGE_luci-app-commands=y
         CONFIG_PACKAGE_luci-app-ddns=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
         # CONFIG_PACKAGE_luci-app-speedlimit is not set
@@ -221,7 +224,7 @@ jobs:
         # 常用软件包:
         cat >> .config <<EOF
         CONFIG_DEFAULT_coremark=y
-        CONFIG_PACKAGE_e2fsprogs=y
+        # CONFIG_PACKAGE_e2fsprogs= is not set
         # CONFIG_PACKAGE_automount is not set
         # CONFIG_PACKAGE_autosamba is not set
         # CONFIG_PACKAGE_samba4-libs is not set
