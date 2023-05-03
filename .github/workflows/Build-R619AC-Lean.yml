@@ -187,6 +187,7 @@ jobs:
         # LuCI插件选择:
         cat >> .config <<EOF
         # CONFIG_PACKAGE_luci-app-ipsec-server is not set
+        # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
         # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
         # CONFIG_PACKAGE_luci-app-alist is not set
         # CONFIG_PACKAGE_luci-app-passwall is not set
