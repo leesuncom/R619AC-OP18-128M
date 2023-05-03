@@ -221,6 +221,8 @@ jobs:
         cat >> .config <<EOF
         CONFIG_DEFAULT_coremark=y
         CONFIG_PACKAGE_e2fsprogs=y
+        # CONFIG_PACKAGE_automount is not set
+        # CONFIG_PACKAGE_autosamba is not set
         # CONFIG_PACKAGE_samba4-libs is not set
         # CONFIG_PACKAGE_samba4-server is not set
         # CONFIG_PACKAGE_odhcpd is not set
