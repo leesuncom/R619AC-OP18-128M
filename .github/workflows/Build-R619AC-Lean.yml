@@ -99,6 +99,20 @@ jobs:
       run: |
         cp -f patch/rc.local openwrt/package/base-files/files/etc/rc.local
         cd openwrt
+        sed -i "19i sed -i '/option ip6assign/d' /etc/config/network" package/lean/default-settings/files/zzz-default-settings
+        sed -i "20i uci set network.lan.gateway=192.168.1.1" package/lean/default-settings/files/zzz-default-settings
+        sed -i "21i uci set network.lan.dns=127.0.0.1" package/lean/default-settings/files/zzz-default-settings
+        sed -i "22i uci commit network" package/lean/default-settings/files/zzz-default-settings
+
+        sed -i "23i sed -i '/option ra_management/d' /etc/config/dhcp" package/lean/default-settings/files/zzz-default-settings
+        sed -i "24i sed -i '/option dhcpv6/d' /etc/config/dhcp" package/lean/default-settings/files/zzz-default-settings
+        sed -i "25i sed -i '/option ra/d' /etc/config/dhcp" package/lean/default-settings/files/zzz-default-settings
+        sed -i "26i uci set dhcp.lan.ignore=1" package/lean/default-settings/files/zzz-default-settings
+        sed -i "27i uci commit dhcp" package/lean/default-settings/files/zzz-default-settings
+
+        sed -i "28i uci set wireless.@wifi-device[0].disabled=1" package/lean/default-settings/files/zzz-default-settings
+        sed -i "29i uci set wireless.@wifi-device[1].disabled=1" package/lean/default-settings/files/zzz-default-settings
+        
         sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
         sed '6 iuci\ set\ system.@system[0].hostname=G-Dock' -i package/lean/default-settings/files/zzz-default-settings
         sed -i "/firewall\.user/d" package/lean/default-settings/files/zzz-default-settings
@@ -197,7 +211,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-ddns=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
         # CONFIG_PACKAGE_luci-app-speedlimit is not set
-        # CONFIG_PACKAGE_luci-app-nlbwmon is not set
+        CONFIG_PACKAGE_luci-app-nlbwmon is not set
         CONFIG_PACKAGE_luci-app-firewall=y
         CONFIG_PACKAGE_luci-app-ssr-plus=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
@@ -208,7 +222,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-ttyd=y
         # CONFIG_PACKAGE_luci-app-webadmin is not set
         CONFIG_PACKAGE_luci-app-wol=y
-        # CONFIG_PACKAGE_luci-app-wrtbwmon is not set
+        CONFIG_PACKAGE_luci-app-wrtbwmon is not set
         CONFIG_PACKAGE_luci-app-ramfree=y
         # CONFIG_PACKAGE_luci-app-usb-printer is not set
         CONFIG_PACKAGE_luci-app-upnp=y
