@@ -103,7 +103,7 @@ jobs:
         sed '6 iuci\ set\ system.@system[0].hostname=G-Dock' -i package/lean/default-settings/files/zzz-default-settings
         sed -i "/firewall\.user/d" package/lean/default-settings/files/zzz-default-settings
         sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
-        sed -i "2i chmod 755 /etc/smartdns/up.sh" package/lean/default-settings/files/zzz-default-settings
+        #sed -i "2i chmod 755 /etc/smartdns/up.sh" package/lean/default-settings/files/zzz-default-settings
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
@@ -117,6 +117,7 @@ jobs:
         cd feeds/luci/applications/luci-app-wrtbwmon
         sed -i 's/ selected=\"selected\"//g' ./luasrc/view/wrtbwmon/wrtbwmon.htm && sed -i 's/\"1\"/\"1\" selected=\"selected\"/g' ./luasrc/view/wrtbwmon/wrtbwmon.htm
         sed -i 's/interval: 5/interval: 1/g' ./htdocs/luci-static/wrtbwmon/wrtbwmon.js
+        sed -i "2i chmod 755 /etc/smartdns/up.sh" package/lean/default-settings/files/zzz-default-settings
 
     - name: Generate configuration file
       run: |
