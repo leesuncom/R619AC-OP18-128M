@@ -84,6 +84,8 @@ jobs:
         # svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
         git clone https://github.com/gngpp/luci-app-design-config.git
         git clone https://github.com/gngpp/luci-theme-design
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+        git clone https://github.com/jerrykuku/luci-app-argon-config.git
         # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
         # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
         # git clone https://github.com/xiaorouji/openwrt-passwall
@@ -122,6 +124,7 @@ jobs:
     - name: FilePatch2
       run: |
         cd openwrt
+        rm -rf package/lean/luci-theme-argon
         rm -rf feeds/packages/lang/golang
         svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
         sed -i 's/[b|B]ootstrap/design/g' ./feeds/luci/collections/luci/Makefile
@@ -203,7 +206,8 @@ jobs:
         # CONFIG_PACKAGE_luci-app-alist is not set
         # CONFIG_PACKAGE_luci-app-passwall is not set
         # CONFIG_PACKAGE_luci-app-diskman is not set
-        CONFIG_PACKAGE_luci-app-design-config=y
+        # CONFIG_PACKAGE_luci-app-design-config is not set
+        CONFIG_PACKAGE_luci-app-argon-config=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-commands=y
         CONFIG_PACKAGE_luci-app-ddns=y
@@ -233,7 +237,8 @@ jobs:
 
         # LuCI主题:
         cat >> .config <<EOF
-        CONFIG_PACKAGE_luci-theme-design=y
+        CONFIG_PACKAGE_luci-theme-argon=y
+        # CONFIG_PACKAGE_luci-theme-design is not set
         EOF
 
         # 常用软件包:
