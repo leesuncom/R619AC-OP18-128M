@@ -111,7 +111,7 @@ jobs:
         sed -i "73i sed -i '/option dhcpv6/d' /etc/config/dhcp" package/lean/default-settings/files/zzz-default-settings
         sed -i "74i sed -i '/option ra/d' /etc/config/dhcp" package/lean/default-settings/files/zzz-default-settings
         sed -i "75i uci set dhcp.lan.ignore=1" package/lean/default-settings/files/zzz-default-settings
-        sed -i "76i uci set dnsmasq.cachesize=0" package/lean/default-settings/files/zzz-default-settings
+        sed -i "76i sed -i 's/8192/0/g' /etc/config/dhcp" package/lean/default-settings/files/zzz-default-settings
         sed -i "77i uci commit dhcp" package/lean/default-settings/files/zzz-default-settings
         sed -i "78i uci set wireless.@wifi-device[0].disabled=1" package/lean/default-settings/files/zzz-default-settings
         sed -i "79i uci set wireless.@wifi-device[1].disabled=1" package/lean/default-settings/files/zzz-default-settings
