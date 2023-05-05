@@ -1,0 +1,33 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option path 'platform/soc/a000000.wifi'
+	option channel '1'
+	option band '2g'
+	option htmode 'HT20'
+	option country 'US'
+	option disabled '1'
+
+config wifi-iface 'default_radio0'
+	option device 'radio0'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'OpenWrt'
+	option encryption 'none'
+
+config wifi-device 'radio1'
+	option type 'mac80211'
+	option path 'platform/soc/a800000.wifi'
+	option channel '36'
+	option band '5g'
+	option htmode 'VHT80'
+	option country 'US'
+	option disabled '1'
+
+config wifi-iface 'default_radio1'
+	option device 'radio1'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'OpenWrt'
+	option encryption 'none'
+
