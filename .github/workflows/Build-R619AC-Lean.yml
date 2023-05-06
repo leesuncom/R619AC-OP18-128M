@@ -84,8 +84,8 @@ jobs:
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/jerrykuku/luci-app-argon-config.git
         # svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
-        # git clone https://github.com/gngpp/luci-app-design-config.git
-        # git clone https://github.com/gngpp/luci-theme-design              
+        git clone https://github.com/gngpp/luci-app-design-config.git
+        git clone https://github.com/gngpp/luci-theme-design              
         # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
         # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
         # git clone https://github.com/xiaorouji/openwrt-passwall
@@ -202,18 +202,18 @@ jobs:
         cat >> .config <<EOF
         # CONFIG_PACKAGE_luci-app-ipsec-server is not set
         # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
-        # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
+        CONFIG_PACKAGE_luci-app-adbyby-plus=y
         # CONFIG_PACKAGE_luci-app-alist is not set
         # CONFIG_PACKAGE_luci-app-passwall is not set
         # CONFIG_PACKAGE_luci-app-diskman is not set
-        # CONFIG_PACKAGE_luci-app-design-config is not set
+        CONFIG_PACKAGE_luci-app-design-config=y
         CONFIG_PACKAGE_luci-app-argon-config=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-commands=y
         CONFIG_PACKAGE_luci-app-ddns=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
         # CONFIG_PACKAGE_luci-app-speedlimit is not set
-        # CONFIG_PACKAGE_luci-app-nlbwmon is not set
+        CONFIG_PACKAGE_luci-app-nlbwmon=y
         CONFIG_PACKAGE_luci-app-firewall=y
         CONFIG_PACKAGE_luci-app-ssr-plus=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
@@ -238,7 +238,7 @@ jobs:
         # LuCI主题:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-theme-argon=y
-        # CONFIG_PACKAGE_luci-theme-design is not set
+        CONFIG_PACKAGE_luci-theme-design=y
         EOF
 
         # 常用软件包:
