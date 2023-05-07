@@ -117,7 +117,6 @@ jobs:
         sed -i "77i uci commit dhcp" package/lean/default-settings/files/zzz-default-settings
         sed -i "78i uci set wireless.@wifi-device[0].disabled=1" package/lean/default-settings/files/zzz-default-settings
         sed -i "79i uci set wireless.@wifi-device[1].disabled=1" package/lean/default-settings/files/zzz-default-settings
-        sed -i "80i sed -i "s/option server nil'/option server same'/g" /etc/config/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
         
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
@@ -132,6 +131,7 @@ jobs:
         cd feeds/luci/applications/luci-app-wrtbwmon
         sed -i 's/ selected=\"selected\"//g' ./luasrc/view/wrtbwmon/wrtbwmon.htm && sed -i 's/\"1\"/\"1\" selected=\"selected\"/g' ./luasrc/view/wrtbwmon/wrtbwmon.htm
         sed -i 's/interval: 5/interval: 1/g' ./htdocs/luci-static/wrtbwmon/wrtbwmon.js
+        sed -i "s/option server nil'/option server same'/g" /etc/config/shadowsocksr
 
     - name: Generate configuration file
       run: |
