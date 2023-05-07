@@ -84,8 +84,8 @@ jobs:
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/jerrykuku/luci-app-argon-config.git
         # svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
-        git clone https://github.com/gngpp/luci-app-design-config.git
-        git clone https://github.com/gngpp/luci-theme-design              
+        # git clone https://github.com/gngpp/luci-app-design-config.git
+        # git clone https://github.com/gngpp/luci-theme-design              
         # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
         # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
         # git clone https://github.com/xiaorouji/openwrt-passwall
@@ -238,7 +238,7 @@ jobs:
         # LuCI主题:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-theme-argon=y
-        CONFIG_PACKAGE_luci-theme-design=y
+        # CONFIG_PACKAGE_luci-theme-design is not set
         EOF
 
         # 常用软件包:
