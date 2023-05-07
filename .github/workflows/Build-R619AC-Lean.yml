@@ -202,7 +202,7 @@ jobs:
         cat >> .config <<EOF
         # CONFIG_PACKAGE_luci-app-ipsec-server is not set
         # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
-        CONFIG_PACKAGE_luci-app-adbyby-plus=y
+        # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
         # CONFIG_PACKAGE_luci-app-alist is not set
         # CONFIG_PACKAGE_luci-app-passwall is not set
         # CONFIG_PACKAGE_luci-app-diskman is not set
@@ -213,7 +213,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-ddns=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
         # CONFIG_PACKAGE_luci-app-speedlimit is not set
-        CONFIG_PACKAGE_luci-app-nlbwmon=y
+        # CONFIG_PACKAGE_luci-app-nlbwmon is not set
         CONFIG_PACKAGE_luci-app-firewall=y
         CONFIG_PACKAGE_luci-app-ssr-plus=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
