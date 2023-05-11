@@ -78,9 +78,10 @@ jobs:
         cd openwrt/package
         mkdir openwrt-packages
         cd openwrt-packages
-        git clone https://github.com/fw876/helloworld
+        git clone https://github.com/fw876/helloworld        
         git clone -b lede https://github.com/pymumu/luci-app-smartdns
-        svn export https://github.com/leesuncom/packages/trunk/net/smartdns
+        git clone https://github.com/pymumu/smartdns.git
+        # svn export https://github.com/leesuncom/packages/trunk/net/smartdns
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/jerrykuku/luci-app-argon-config.git
         # svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
@@ -101,7 +102,7 @@ jobs:
         # sed -i "/firewall\.user/d" package/lean/default-settings/files/zzz-default-settings
         sed -i "42i echo 'iptables -t nat -I POSTROUTING -o eth0.1 -j MASQUERADE' >> /etc/firewall.user" package/lean/default-settings/files/zzz-default-settings
         sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
-        sed -i "64i chmod 755 /etc/smartdns/up.sh" package/lean/default-settings/files/zzz-default-settings
+        # sed -i "64i chmod 755 /etc/smartdns/up.sh" package/lean/default-settings/files/zzz-default-settings
         sed -i "65i sed -i '/option type/d' /etc/config/network" package/lean/default-settings/files/zzz-default-settings
         sed -i "66i uci set network.lan.ifname=eth0.1" package/lean/default-settings/files/zzz-default-settings
         sed -i "67i sed -i '/option ip6assign/d' /etc/config/network" package/lean/default-settings/files/zzz-default-settings
