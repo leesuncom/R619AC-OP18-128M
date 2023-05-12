@@ -113,9 +113,9 @@ jobs:
         sed -i "75i uci set dhcp.lan.ignore=1" package/lean/default-settings/files/zzz-default-settings
         sed -i "76i sed -i 's/8192/0/g' /etc/config/dhcp" package/lean/default-settings/files/zzz-default-settings
         sed -i "77i uci commit dhcp" package/lean/default-settings/files/zzz-default-settings
-        sed -i "78i sed -i '/option server/s/nil/same/g' /etc/config/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
-        sed -i "79i uci set wireless.@wifi-device[0].disabled=1" package/lean/default-settings/files/zzz-default-settings
-        sed -i "80i uci set wireless.@wifi-device[1].disabled=1" package/lean/default-settings/files/zzz-default-settings        
+        # sed -i "78i sed -i '/option server/s/nil/same/g' /etc/config/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
+        sed -i "78i uci set wireless.@wifi-device[0].disabled=1" package/lean/default-settings/files/zzz-default-settings
+        sed -i "79i uci set wireless.@wifi-device[1].disabled=1" package/lean/default-settings/files/zzz-default-settings        
         
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
@@ -123,7 +123,7 @@ jobs:
     - name: FilePatch2
       run: |
         cd openwrt
-        sed -i '/option server/s/nil/same/g' package/openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/config/shadowsocksr
+        sed '/option server/s/nil/same/g' package/openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/config/shadowsocksr
         rm -rf feeds/luci/applications/luci-app-argon-config
         rm -rf feeds/packages/lang/golang
         svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
