@@ -117,7 +117,7 @@ jobs:
         sed -i "77i uci commit dhcp" package/lean/default-settings/files/zzz-default-settings
         sed sed  " "78i uci set wireless.@wifi-device[0].disabled=1" package/lean/default-settings/files/zzz-default-settings
         sed  "79i uci set wireless.@wifi-device[1].disabled=1" package/lean/default-settings/files/zzz-default-settings
-        sed -i "80i cp -f patch/firewall /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
+        # sed -i "80i cp -f patch/firewall /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
@@ -283,6 +283,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
+        cp -f patch/firewall /etc/config/firewall
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
