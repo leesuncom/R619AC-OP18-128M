@@ -78,8 +78,8 @@ jobs:
         rm -rf package/helloworld
         git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
         git -C package/helloworld pull
-        rm -rf package/helloworld
-        sed -i '/option server/s/nil/same/g' package/helloworld/luci-app-ssr-plus/root/etc/config/shadowsocksr
+        cp -f patch/shadowsocksr package/helloworld/luci-app-ssr-plus/root/etc/config/shadowsocksr
+        rm -rf package/helloworld       
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
