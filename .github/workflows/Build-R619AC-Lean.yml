@@ -75,8 +75,9 @@ jobs:
         SCKEY: ${{ secrets.ACTIONS_TRIGGER_PAT }}
       run: |
         ls
-        sed -i '$a src-git helloworld https://github.com/fw876/helloworld.git' feeds.conf.default
         cd openwrt/package
+        git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
+        git -C package/helloworld pull
         mkdir openwrt-packages
         cd openwrt-packages
         # git clone https://github.com/fw876/helloworld        
