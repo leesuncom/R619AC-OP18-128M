@@ -75,7 +75,7 @@ jobs:
         SCKEY: ${{ secrets.ACTIONS_TRIGGER_PAT }}
       run: |
         ls
-        git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
+        git clone https://github.com/fw876/helloworld.git package/helloworld
         cp -f patch/shadowsocksr package/helloworld/luci-app-ssr-plus/root/etc/config/shadowsocksr       
         cd openwrt/package        
         mkdir openwrt-packages
