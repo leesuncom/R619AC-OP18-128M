@@ -94,7 +94,7 @@ jobs:
     - name: FilePatch
       run: |
         cp -f patch/rc.local openwrt/package/base-files/files/etc/rc.local
-        cp -f patch/shadowsocksr helloworld/luci-app-ssr-plus/root/etc/config/shadowsocksr
+        cp -f patch/turboacc luci/applications/luci-app-turboacc/root/etc/config/turboacc
         cd openwrt
         sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
         sed -i '6i uci set system.@system[0].hostname=NeoBird' package/lean/default-settings/files/zzz-default-settings
