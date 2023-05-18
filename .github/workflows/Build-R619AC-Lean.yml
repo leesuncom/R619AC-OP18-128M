@@ -79,6 +79,7 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
+        git clone https://github.com/zzsj0928/luci-app-pushbot
         git clone https://github.com/fw876/helloworld
         git clone -b lede https://github.com/pymumu/luci-app-smartdns
         svn export https://github.com/leesuncom/packages/trunk/net/smartdns
@@ -217,6 +218,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
         # CONFIG_PACKAGE_luci-app-serverchan is not set
         # CONFIG_PACKAGE_luci-app-pptp-server is not set
+        CONFIG_PACKAGE_luci-app-pushbot=y
         CONFIG_PACKAGE_luci-app-smartdns=y
         # CONFIG_PACKAGE_luci-app-samba4 is not set
         CONFIG_PACKAGE_luci-app-ttyd=y
