@@ -203,6 +203,7 @@ jobs:
         # CONFIG_PACKAGE_luci-app-alist is not set
         # CONFIG_PACKAGE_luci-app-passwall is not set
         # CONFIG_PACKAGE_luci-app-diskman is not set
+        CONFIG_PACKAGE_luci-app-aliddns=y
         CONFIG_PACKAGE_luci-app-design-config=y
         CONFIG_PACKAGE_luci-app-argon-config=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
