@@ -79,12 +79,15 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
+        git clone https://github.com/sirpdboy/netspeedtest.git
+        git clone https://github.com/sirpdboy/luci-app-netwizard.git
         git clone https://github.com/zzsj0928/luci-app-pushbot
         git clone https://github.com/fw876/helloworld
         git clone -b lede https://github.com/pymumu/luci-app-smartdns
         svn export https://github.com/leesuncom/packages/trunk/net/smartdns
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/jerrykuku/luci-app-argon-config.git
+        https://github.com/sirpdboy/luci-theme-kucat.git
         # svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
         # git clone https://github.com/gngpp/luci-app-design-config.git
         # git clone https://github.com/gngpp/luci-theme-design              
@@ -211,6 +214,8 @@ jobs:
         CONFIG_PACKAGE_luci-app-commands=y
         CONFIG_PACKAGE_luci-app-ddns=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
+        CONFIG_PACKAGE_luci-app-netwizard=y
+        CONFIG_PACKAGE_luci-app-netspeedtest=y
         # CONFIG_PACKAGE_luci-app-speedlimit is not set
         # CONFIG_PACKAGE_luci-app-nlbwmon is not set
         CONFIG_PACKAGE_luci-app-firewall=y
@@ -238,6 +243,7 @@ jobs:
         # LuCI主题:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-theme-argon=y
+        CONFIG_PACKAGE_luci-theme-kucat=y
         # CONFIG_PACKAGE_luci-theme-design is not set
         EOF
         # 常用软件包:
