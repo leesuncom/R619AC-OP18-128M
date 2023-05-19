@@ -85,9 +85,10 @@ jobs:
         git clone https://github.com/fw876/helloworld
         git clone -b lede https://github.com/pymumu/luci-app-smartdns
         svn export https://github.com/leesuncom/packages/trunk/net/smartdns
+        svn export https://github.com/leesuncom/packages/trunk/net/luci-app-turboacc
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/jerrykuku/luci-app-argon-config.git
-        git clone https://github.com/sirpdboy/luci-theme-kucat.git
+        git clone https://github.com/sirpdboy/luci-theme-kucat.git    
         # svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
         # git clone https://github.com/gngpp/luci-app-design-config.git
         # git clone https://github.com/gngpp/luci-theme-design              
@@ -135,7 +136,8 @@ jobs:
 
     - name: FilePatch2
       run: |
-        cd openwrt        
+        cd openwrt
+        rm -rf feeds/luci/applications/luci-app-turboacc
         rm -rf feeds/luci/applications/luci-app-argon-config
         rm -rf feeds/packages/lang/golang
         svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang feeds/packages/lang/golang
