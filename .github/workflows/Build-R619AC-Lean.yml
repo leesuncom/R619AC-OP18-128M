@@ -75,7 +75,7 @@ jobs:
       env:
         SCKEY: ${{ secrets.ACTIONS_TRIGGER_PAT }}
       run: |
-        ls              
+        ls
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
@@ -132,12 +132,13 @@ jobs:
         sed  "86i sed -i '/option server/s/nil/same/g' /etc/config/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
         
     - name: Update feeds
+        sed -i '2d' feeds.conf.default
+        sed -i '$a src-git https://github.com/leesuncom/luci' feeds.conf.default
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
 
     - name: FilePatch2
       run: |
         cd openwrt
-        rm -rf feeds/luci/applications/luci-app-turboacc
         rm -rf feeds/luci/applications/luci-app-argon-config
         rm -rf feeds/packages/lang/golang
         svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang feeds/packages/lang/golang
