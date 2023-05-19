@@ -130,8 +130,7 @@ jobs:
         sed -i "84i sed -i '15aoption masq 1' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "85i uci commit firewall" package/lean/default-settings/files/zzz-default-settings        
         sed  "86i sed -i '/option server/s/nil/same/g' /etc/config/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
-        sed -i '2d' feeds.conf.default
-        sed -i '$a src-git https://github.com/leesuncom/luci' feeds.conf.default
+        sed -i '/luci/csrc-git luci https://github.com/leesuncom/luci' feeds.conf.default
         
     - name: Update feeds        
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
