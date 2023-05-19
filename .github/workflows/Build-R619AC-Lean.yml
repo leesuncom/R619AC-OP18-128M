@@ -77,6 +77,7 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
+        git clone https://github.com/sirpdboy/chatgpt-web.git
         git clone https://github.com/sirpdboy/netspeedtest.git
         git clone https://github.com/sirpdboy/luci-app-netwizard.git
         git clone https://github.com/zzsj0928/luci-app-pushbot
@@ -216,6 +217,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-filetransfer=y
         CONFIG_PACKAGE_luci-app-netwizard=y
         CONFIG_PACKAGE_luci-app-netspeedtest=y
+        CONFIG_PACKAGE_luci-app-chatgpt=y
         # CONFIG_PACKAGE_luci-app-speedlimit is not set
         # CONFIG_PACKAGE_luci-app-nlbwmon is not set
         CONFIG_PACKAGE_luci-app-firewall=y
