@@ -127,7 +127,7 @@ jobs:
         sed -i "83i sed -i '/option syn_flood/d' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "84i sed -i '15aoption masq 1' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "85i uci commit firewall" package/lean/default-settings/files/zzz-default-settings        
-        sed  "86i sed -i '/option server/s/nil/same/g' /etc/config/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
+        sed -i "86i sed -i '/option server/s/nil/same/g' /etc/config/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
         sed -i '/luci/csrc-git luci https://github.com/leesuncom/luci' feeds.conf.default
         
     - name: Update feeds        
