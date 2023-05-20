@@ -98,8 +98,7 @@ jobs:
         # svn export https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome
         
     - name: FilePatch
-      run: |
-        cp -f patch/shadowsocksr package/openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
+      run: |        
         cp -f patch/rc.local openwrt/package/base-files/files/etc/rc.local
         cd openwrt
         sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
@@ -286,10 +285,12 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        cp -f patch/shadowsocksr package/openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
         
     - name: Compile the firmware
       id: compile
       run: |
+        # cp -f patch/shadowsocksr package/openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
         cd openwrt     
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
