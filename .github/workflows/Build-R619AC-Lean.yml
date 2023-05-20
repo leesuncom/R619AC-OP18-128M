@@ -128,7 +128,7 @@ jobs:
         sed -i "83i sed -i '/option syn_flood/d' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "84i sed -i '15aoption masq 1' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "85i uci commit firewall" package/lean/default-settings/files/zzz-default-settings        
-        sed -i "86i sed -i '/option server/s/nil/same/g' /etc/config/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
+        sed -i "86i sed -i '/socks5_proxy[0].server/s/nil/same/g' /etc/init.d/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
         sed -i '/luci/csrc-git luci https://github.com/leesuncom/luci' feeds.conf.default
         
     - name: Update feeds        
@@ -289,7 +289,6 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        cp -f patch/shadowsocksr openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
         cd openwrt     
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
