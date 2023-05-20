@@ -77,7 +77,6 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
-        svn export https://github.com/kenzok8/small-package/trunk/luci-app-aliddns
         git clone https://github.com/sirpdboy/chatgpt-web.git
         git clone https://github.com/sirpdboy/netspeedtest.git
         git clone https://github.com/zzsj0928/luci-app-pushbot
@@ -208,7 +207,6 @@ jobs:
         # CONFIG_PACKAGE_luci-app-alist is not set
         # CONFIG_PACKAGE_luci-app-passwall is not set
         # CONFIG_PACKAGE_luci-app-diskman is not set
-        CONFIG_PACKAGE_luci-app-aliddns=y
         # CONFIG_PACKAGE_luci-app-design-config is not set
         CONFIG_PACKAGE_luci-app-argon-config=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
