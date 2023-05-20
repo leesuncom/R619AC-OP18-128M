@@ -289,7 +289,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        cp -f patch/shadowsocksr package/openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
+        cp -f patch/shadowsocksr openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
         cd openwrt     
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
