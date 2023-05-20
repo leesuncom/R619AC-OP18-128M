@@ -99,6 +99,7 @@ jobs:
         
     - name: FilePatch
       run: |
+        cp -f patch/shadowsocksr package/openwrt-packages/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
         cp -f patch/rc.local openwrt/package/base-files/files/etc/rc.local
         cd openwrt
         sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
