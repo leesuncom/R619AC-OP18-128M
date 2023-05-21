@@ -80,7 +80,7 @@ jobs:
         # git clone https://github.com/QiuSimons/openwrt-mos.git
         git clone https://github.com/sbwml/luci-app-mosdns -b v5
         rm -rf feeds/packages/net/v2ray-geodata
-        https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+        git clone https://github.com/sbwml/v2ray-geodata
         git clone https://github.com/sirpdboy/chatgpt-web.git
         git clone https://github.com/sirpdboy/netspeedtest.git
         git clone https://github.com/zzsj0928/luci-app-pushbot
