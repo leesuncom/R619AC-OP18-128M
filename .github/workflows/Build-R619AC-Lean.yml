@@ -77,13 +77,13 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
+        git clone https://github.com/QiuSimons/openwrt-mos.git
         git clone https://github.com/sirpdboy/chatgpt-web.git
         git clone https://github.com/sirpdboy/netspeedtest.git
         git clone https://github.com/zzsj0928/luci-app-pushbot
         git clone https://github.com/fw876/helloworld
-        git clone -b lede https://github.com/pymumu/luci-app-smartdns
-        svn export https://github.com/leesuncom/packages/trunk/net/smartdns
-        # svn export https://github.com/leesuncom/packages/trunk/net/luci-app-turboacc
+        # git clone -b lede https://github.com/pymumu/luci-app-smartdns
+        # svn export https://github.com/leesuncom/packages/trunk/net/smartdns
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/jerrykuku/luci-app-argon-config.git
         git clone https://github.com/sirpdboy/luci-theme-kucat.git    
@@ -223,13 +223,14 @@ jobs:
         # CONFIG_PACKAGE_luci-app-serverchan is not set
         # CONFIG_PACKAGE_luci-app-pptp-server is not set
         CONFIG_PACKAGE_luci-app-pushbot=y
-        CONFIG_PACKAGE_luci-app-smartdns=y
+        # CONFIG_PACKAGE_luci-app-smartdns is not set
+        CONFIG_PACKAGE_luci-app-mosdns=y
         # CONFIG_PACKAGE_luci-app-samba4 is not set
         CONFIG_PACKAGE_luci-app-ttyd=y
         # CONFIG_PACKAGE_luci-app-webadmin is not set
         CONFIG_PACKAGE_luci-app-wol=y
         # CONFIG_PACKAGE_luci-app-wrtbwmon is not set
-        CONFIG_PACKAGE_luci-app-ramfree=y
+        CONFIG_PACKAGE_luci-app-ramfree=y        
         # CONFIG_PACKAGE_luci-app-usb-printer is not set
         CONFIG_PACKAGE_luci-app-upnp=y
         CONFIG_PACKAGE_luci-app-udpxy=y
