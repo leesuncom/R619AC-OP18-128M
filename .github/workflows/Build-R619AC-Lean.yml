@@ -77,7 +77,6 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
-        # git clone https://github.com/QiuSimons/openwrt-mos.git
         git clone https://github.com/sbwml/luci-app-mosdns -b v5
         rm -rf feeds/packages/net/v2ray-geodata
         git clone https://github.com/sbwml/v2ray-geodata
@@ -90,7 +89,6 @@ jobs:
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/jerrykuku/luci-app-argon-config.git
         git clone https://github.com/sirpdboy/luci-theme-kucat.git    
-        # svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
         # git clone https://github.com/gngpp/luci-app-design-config.git
         # git clone https://github.com/gngpp/luci-theme-design              
         # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
@@ -139,10 +137,10 @@ jobs:
     - name: FilePatch2
       run: |
         cd openwrt
+        rm -rf themes/luci-theme-argon
         rm -rf feeds/luci/applications/luci-app-argon-config
         rm -rf feeds/packages/lang/golang
         svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang feeds/packages/lang/golang
-        # svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
         sed -i 's/[b|B]ootstrap/argon/g' ./feeds/luci/collections/luci/Makefile
         
     - name: Generate configuration file
