@@ -77,9 +77,9 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
-        git clone https://github.com/leesuncom/luci-app-mosdns.git # https://github.com/sbwml/luci-app-mosdns -b v5
-        rm -rf feeds/packages/net/v2ray-geodata
-        git clone https://github.com/sbwml/v2ray-geodata
+        # git clone https://github.com/leesuncom/luci-app-mosdns.git # https://github.com/sbwml/luci-app-mosdns -b v5
+        # rm -rf feeds/packages/net/v2ray-geodata
+        # git clone https://github.com/sbwml/v2ray-geodata
         git clone https://github.com/leesuncom/chatgpt-web.git # https://github.com/sirpdboy/chatgpt-web.git
         git clone https://github.com/sirpdboy/netspeedtest.git
         git clone https://github.com/zzsj0928/luci-app-pushbot
@@ -225,7 +225,7 @@ jobs:
         # CONFIG_PACKAGE_luci-app-pptp-server is not set
         CONFIG_PACKAGE_luci-app-pushbot=y
         CONFIG_PACKAGE_luci-app-smartdns=y
-        CONFIG_PACKAGE_luci-app-mosdns=y
+        # CONFIG_PACKAGE_luci-app-mosdns is not set
         # CONFIG_PACKAGE_luci-app-samba4 is not set
         CONFIG_PACKAGE_luci-app-ttyd=y
         # CONFIG_PACKAGE_luci-app-webadmin is not set
