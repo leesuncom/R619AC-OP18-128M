@@ -77,14 +77,14 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
-        # git clone https://github.com/leesuncom/luci-app-mosdns.git # https://github.com/sbwml/luci-app-mosdns -b v5
-        # rm -rf feeds/packages/net/v2ray-geodata
-        # git clone https://github.com/sbwml/v2ray-geodata
+        git clone https://github.com/leesuncom/luci-app-mosdns.git # https://github.com/sbwml/luci-app-mosdns -b v5
+        rm -rf feeds/packages/net/v2ray-geodata
+        git clone https://github.com/sbwml/v2ray-geodata
         git clone https://github.com/leesuncom/chatgpt-web.git # https://github.com/sirpdboy/chatgpt-web.git
         git clone https://github.com/sirpdboy/netspeedtest.git
         git clone https://github.com/zzsj0928/luci-app-pushbot
         git clone https://github.com/leesuncom/helloworld.git # https://github.com/fw876/helloworld
-        git clone https://github.com/leesuncom/luci-app-smartdns.git  # git clone -b lede https://github.com/pymumu/luci-app-smartdns
+        git clone -b lede https://github.com/leesuncom/luci-app-smartdns.git  # git clone -b lede https://github.com/pymumu/luci-app-smartdns
         svn export https://github.com/leesuncom/packages/trunk/net/smartdns
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/leesuncom/luci-app-argon-config.git # https://github.com/jerrykuku/luci-app-argon-config.git
