@@ -348,10 +348,10 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
         body: |
-          - 版本号：旁路由${{ env.VER }}
-          - 默认IP：192.168.1.2
-          - 默认密码：password
-          - 当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
+          - R619AC旁路由版本号：${{ env.VER }}
+          - R619AC旁路由默认IP：192.168.1.2
+          - R619AC旁路由默认密码：password
+          - R619AC旁路由当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           - 下载后请仔细校验MD5，如不正确请重新下载
           ${{ env.useVersionInfo }}
           
