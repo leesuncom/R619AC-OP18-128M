@@ -101,6 +101,7 @@ jobs:
       run: |        
         cp -f patch/rc.local openwrt/package/base-files/files/etc/rc.local
         cd openwrt
+        sed -i '/luci/csrc-git luci https://github.com/leesuncom/luci' feeds.conf.default
         sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
         sed -i '6i uci set system.@system[0].hostname=NeoBird' package/lean/default-settings/files/zzz-default-settings
         # sed -i "/firewall\.user/d" package/lean/default-settings/files/zzz-default-settings
@@ -127,9 +128,7 @@ jobs:
         sed -i "82i sed -i '17,144d' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "83i sed -i '/option syn_flood/d' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "84i sed -i '15aoption masq 1' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
-        sed -i "85i uci commit firewall" package/lean/default-settings/files/zzz-default-settings        
-        sed -i "86i sed -i '/socks5_proxy[0].server/s/nil/same/g' /etc/init.d/shadowsocksr" package/lean/default-settings/files/zzz-default-settings
-        sed -i '/luci/csrc-git luci https://github.com/leesuncom/luci' feeds.conf.default
+        sed -i "85i uci commit firewall" package/lean/default-settings/files/zzz-default-settings
         
     - name: Update feeds        
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
