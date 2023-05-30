@@ -104,7 +104,7 @@ jobs:
         sed -i '/luci/csrc-git luci https://github.com/leesuncom/luci' feeds.conf.default
         sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings       
         sed -i "/firewall\.user/d" package/lean/default-settings/files/zzz-default-settings
-        sed  -i"echo 'iptables -t nat -I POSTROUTING -o eth0.1 -j MASQUERADE' >> /etc/firewall.user" package/lean/default-settings/files/zzz-default-settings
+        # sed  -i"echo 'iptables -t nat -I POSTROUTING -o eth0.1 -j MASQUERADE' >> /etc/firewall.user" package/lean/default-settings/files/zzz-default-settings
         sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate        
         sed -i "2i sed -i '/255.255.255.0/a\option delegate 0' /etc/config/network" package/lean/default-settings/files/zzz-default-settings
         sed -i "3i uci set network.lan.ifname=eth0.1" package/lean/default-settings/files/zzz-default-settings
