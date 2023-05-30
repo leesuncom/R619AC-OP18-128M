@@ -102,7 +102,7 @@ jobs:
         cp -f patch/rc.local openwrt/package/base-files/files/etc/rc.local
         cd openwrt
         sed -i '/luci/csrc-git luci https://github.com/leesuncom/luci' feeds.conf.default
-        sed  "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
+        sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
         sed -i '6i uci set system.@system[0].hostname=NeoBird' package/lean/default-settings/files/zzz-default-settings
         sed -i "/firewall\.user/d" package/lean/default-settings/files/zzz-default-settings
         sed -i "42i echo 'iptables -t nat -I POSTROUTING -o eth0.1 -j MASQUERADE' >> /etc/firewall.user" package/lean/default-settings/files/zzz-default-settings
