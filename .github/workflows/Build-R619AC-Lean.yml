@@ -127,7 +127,7 @@ jobs:
         sed -i "20i sed -i '/option syn_flood/d' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "21i sed -i '15aoption masq 1' /etc/config/firewall" package/lean/default-settings/files/zzz-default-settings
         sed -i "22i uci commit firewall" package/lean/default-settings/files/zzz-default-settings
-        sed  "23i chmod 755 /etc/smartdns/up.sh" package/lean/default-settings/files/zzz-default-settings
+        sed -i "23i chmod 755 /etc/smartdns/up.sh" package/lean/default-settings/files/zzz-default-settings
         sed -i '28i uci set system.@system[0].hostname=NeoBird' package/lean/default-settings/files/zzz-default-settings
         
     - name: Update feeds        
