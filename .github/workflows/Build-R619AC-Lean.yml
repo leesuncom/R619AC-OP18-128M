@@ -177,10 +177,12 @@ jobs:
         # 无论你想要对固件进行怎样的定制, 都需要且只需要修改 EOF 回环内的内容.
         # 
         # 编译竞斗云固件:
+        
         cat >> .config <<EOF
         CONFIG_TARGET_ipq40xx=y
         CONFIG_TARGET_ipq40xx_DEVICE_p2w_r619ac-128m=y
         EOF
+        
         # USB2.0支持:
         # cat >> .config <<EOF
         # CONFIG_PACKAGE_kmod-usb-core=y
@@ -192,6 +194,7 @@ jobs:
         # CONFIG_PACKAGE_kmod-usb-xhci-hcd=y
         # CONFIG_PACKAGE_kmod-usb3=y
         # EOF
+        
         # IPv6支持:
         cat >> .config <<EOF
         CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
@@ -200,6 +203,7 @@ jobs:
         CONFIG_PACKAGE_ip6tables-mod-nat=y
         CONFIG_PACKAGE_ipv6helper=y
         EOF
+        
         # LuCI插件选择:
         cat >> .config <<EOF
         # CONFIG_PACKAGE_luci-app-ipsec-server is not set
@@ -241,12 +245,14 @@ jobs:
         # CONFIG_PACKAGE_luci-app-adguardhome is not set
         # CONFIG_PACKAGE_luci-app-sqm is not set
         EOF
+        
         # LuCI主题:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-theme-argon=y
         CONFIG_PACKAGE_luci-theme-kucat=y
         # CONFIG_PACKAGE_luci-theme-design is not set
         EOF
+        
         # 常用软件包:
         cat >> .config <<EOF
         CONFIG_DEFAULT_coremark=y
@@ -260,6 +266,7 @@ jobs:
         # CONFIG_luci-app-samba is net set
         # CONFIG_PACKAGE_luci-app-unblockmusic is net set
         EOF
+        
         # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
         # cat >> .config <<EOF
         # # CONFIG_TARGET_IMAGES_PAD is not set
