@@ -77,6 +77,7 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
+        svn export https://github.com/leesuncom/OpenClash/trunk/luci-app-openclash
         git clone https://github.com/leesuncom/luci-app-mosdns.git # https://github.com/sbwml/luci-app-mosdns -b v5
         rm -rf feeds/packages/net/v2ray-geodata
         git clone https://github.com/sbwml/v2ray-geodata
@@ -93,8 +94,6 @@ jobs:
         # git clone https://github.com/sirpdboy/luci-app-netdata
         # git clone https://github.com/gngpp/luci-app-design-config.git
         # git clone https://github.com/gngpp/luci-theme-design              
-        # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
-        # svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
         # git clone https://github.com/xiaorouji/openwrt-passwall
         # git clone -b luci https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
         # svn export https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome
@@ -232,6 +231,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-pushbot=y
         CONFIG_PACKAGE_luci-app-smartdns=y
         CONFIG_PACKAGE_luci-app-mosdns=y
+        CONFIG_PACKAGE_luci-app-openclash=y
         # CONFIG_PACKAGE_luci-app-samba4 is not set
         CONFIG_PACKAGE_luci-app-ttyd=y
         # CONFIG_PACKAGE_luci-app-webadmin is not set
