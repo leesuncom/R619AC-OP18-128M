@@ -138,6 +138,7 @@ jobs:
     - name: FilePatch2
       run: |
         cd openwrt
+        rm -rf feeds/luci/applications/luci-app-smartdns
         rm -rf themes/luci-theme-argon
         rm -rf feeds/luci/applications/luci-app-argon-config
         rm -rf feeds/packages/lang/golang
