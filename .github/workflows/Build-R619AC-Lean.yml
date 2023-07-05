@@ -78,13 +78,13 @@ jobs:
         mkdir openwrt-packages
         cd openwrt-packages
         # git clone https://github.com/leesuncom/luci-app-alist
-        svn export https://github.com/leesuncom/OpenClash/trunk/luci-app-openclash
+        # svn export https://github.com/leesuncom/OpenClash/trunk/luci-app-openclash
         git clone https://github.com/leesuncom/luci-app-mosdns.git # https://github.com/sbwml/luci-app-mosdns -b v5
         rm -rf feeds/packages/net/v2ray-geodata
         git clone https://github.com/sbwml/v2ray-geodata
         git clone https://github.com/leesuncom/chatgpt-web.git # https://github.com/sirpdboy/chatgpt-web.git
         # git clone https://github.com/sirpdboy/netspeedtest.git
-        git clone https://github.com/zzsj0928/luci-app-pushbot
+        # git clone https://github.com/zzsj0928/luci-app-pushbot
         git clone https://github.com/leesuncom/helloworld.git # https://github.com/fw876/helloworld
         git clone https://github.com/leesuncom/luci-app-smartdns.git  # git clone -b lede https://github.com/pymumu/luci-app-smartdns
         svn export https://github.com/leesuncom/custom/trunk/package/smartdns
@@ -231,10 +231,10 @@ jobs:
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
         # CONFIG_PACKAGE_luci-app-serverchan is not set
         # CONFIG_PACKAGE_luci-app-pptp-server is not set
-        CONFIG_PACKAGE_luci-app-pushbot=y
+        # CONFIG_PACKAGE_luci-app-pushbot=y
         CONFIG_PACKAGE_luci-app-smartdns=y
         CONFIG_PACKAGE_luci-app-mosdns=y
-        CONFIG_PACKAGE_luci-app-openclash=y
+        # CONFIG_PACKAGE_luci-app-openclash=y
         # CONFIG_PACKAGE_luci-app-samba4 is not set
         CONFIG_PACKAGE_luci-app-ttyd=y
         # CONFIG_PACKAGE_luci-app-webadmin is not set
