@@ -77,7 +77,7 @@ jobs:
         cd openwrt/package        
         mkdir openwrt-packages
         cd openwrt-packages
-        git clone https://github.com/leesuncom/luci-app-alist
+        # git clone https://github.com/leesuncom/luci-app-alist
         svn export https://github.com/leesuncom/OpenClash/trunk/luci-app-openclash
         git clone https://github.com/leesuncom/luci-app-mosdns.git # https://github.com/sbwml/luci-app-mosdns -b v5
         rm -rf feeds/packages/net/v2ray-geodata
@@ -215,7 +215,7 @@ jobs:
         # CONFIG_PACKAGE_luci-app-passwall is not set
         # CONFIG_PACKAGE_luci-app-diskman is not set
         # CONFIG_PACKAGE_luci-app-design-config is not set
-        CONFIG_PACKAGE_luci-app-alist=y
+        # CONFIG_PACKAGE_luci-app-alist=y
         CONFIG_PACKAGE_luci-app-argon-config=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-commands=y
