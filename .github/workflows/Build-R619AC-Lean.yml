@@ -90,7 +90,7 @@ jobs:
         svn export https://github.com/leesuncom/custom/trunk/package/smartdns
         # svn export https://github.com/leesuncom/packages/trunk/net/smartdns
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
-        git clone https://github.com/leesuncom/luci-app-argon-config.git # https://github.com/jerrykuku/luci-app-argon-config.git
+        git clone -b 18.06 https://github.com/leesuncom/luci-app-argon-config.git # git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git
         git clone https://github.com/sirpdboy/luci-theme-kucat.git
         # git clone https://github.com/sirpdboy/luci-app-netdata
         # git clone https://github.com/gngpp/luci-app-design-config.git
